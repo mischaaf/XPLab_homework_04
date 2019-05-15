@@ -1,0 +1,4 @@
+# XPLab_homework_04
+
+This repository contains the fourth homework of the experimental psychology lab. It is handed in by Cora Burgwinkel and Mirijam Schaaf.
+We created the mental rotation task by starting from the babe departure point.
