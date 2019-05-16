@@ -30,10 +30,25 @@ const generateID = function(len) {
 
 
 
-/* Hooks
-*
-*
-*/
+// Hooks
+const check_response = function(data, next) {
+    data.response_checked = false;
+    $("body").on("keydown", function(e) {
+        if (data.response_checked == false) {
+            const keyPressed = String.fromCharCode(
+                e.which
+            ).toLowerCase();
+            if (keyPressed == data.key1 || keyPressed == data.key2) {
+                if (data[keyPressed] === data.correct) {
+                    alert('Your answer is correct! Yey!');
+                } else {
+                    alert('Sorry, this answer is incorrect :( The correct answer was ' + data.correct);
+                }
+                data.response_checked = true;
+                next();
+            }
+        }})
+}
 
 //Error feedback if participants exceeds the time for responding
 const time_limit = function(data, next) {
